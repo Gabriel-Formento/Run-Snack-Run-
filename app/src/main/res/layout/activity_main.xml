@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <ImageView android:id="@+id/bgMenu" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/screen1" android:scaleType="centerCrop" android:visibility="gone"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menuLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_h_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.28" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_h_snake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRecordsMenu"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:alpha="0.85"
+            android:background="@drawable/bg_botao_arredondado"
+            android:fontFamily="casual"
+            android:text="Recordes"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_v"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_h_title" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAchievementsMenu"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:alpha="0.85"
+            android:background="@drawable/bg_botao_arredondado"
+            android:fontFamily="casual"
+            android:text="Conquistas"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/guideline_v"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_h_title" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStatsMenu"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:alpha="0.85"
+            android:background="@drawable/bg_botao_arredondado"
+            android:fontFamily="casual"
+            android:text="Estatísticas"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_v"
+            app:layout_constraintTop_toBottomOf="@+id/btnRecordsMenu" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOptionsMenu"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:alpha="0.85"
+            android:background="@drawable/bg_botao_arredondado"
+            android:fontFamily="casual"
+            android:text="Opções"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/guideline_v"
+            app:layout_constraintTop_toBottomOf="@+id/btnAchievementsMenu" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_h_snake">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnStart"
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:alpha="0.85"
+                android:background="@drawable/bg_botao_arredondado"
+                android:fontFamily="casual"
+                android:text="INICIAR"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSurvival"
+                    android:layout_width="140dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="5dp"
+                    android:alpha="0.85"
+                    android:background="@drawable/bg_botao_arredondado"
+                    android:fontFamily="casual"
+                    android:text="Survival"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#FF5252"
+                    android:visibility="gone"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnInfinite"
+                    android:layout_width="140dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="5dp"
+                    android:alpha="0.85"
+                    android:background="@drawable/bg_botao_arredondado"
+                    android:fontFamily="casual"
+                    android:text="Infinito"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFD700"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnExit"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:alpha="0.85"
+            android:background="@drawable/bg_botao_arredondado"
+            android:fontFamily="casual"
+            android:text="Sair"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnAbout"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_dialog_info"
+            app:tint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout android:id="@+id/statsLayoutRoot" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone" android:background="#CC000000" android:padding="20dp">
+        <LinearLayout android:id="@+id/statsContainer" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="20dp">
+            <TextView android:id="@+id/tvStatsTitle" android:text="ESTATÍSTICAS" android:textColor="#FFD700" android:textSize="32sp" android:textStyle="bold" android:fontFamily="casual" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16dp"/>
+
+            <RadioGroup android:id="@+id/rgStatsMode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="24dp">
+                <RadioButton android:id="@+id/rbStatsNorm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Padrão" android:textColor="#FFF" android:fontFamily="casual" android:checked="true" android:buttonTint="#4CAF50" android:layout_marginEnd="10dp"/>
+                <RadioButton android:id="@+id/rbStatsInf" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Infinito" android:textColor="#FFF" android:fontFamily="casual" android:buttonTint="#4CAF50" android:layout_marginEnd="10dp"/>
+                <RadioButton android:id="@+id/rbStatsSurv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Survival" android:textColor="#FFF" android:fontFamily="casual" android:buttonTint="#4CAF50"/>
+            </RadioGroup>
+
+            <TextView android:id="@+id/tvStatsInfo" android:text="..." android:textColor="#FFF" android:fontFamily="casual" android:textSize="20sp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="30dp" android:lineSpacingExtra="8dp"/>
+            <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnBackFromStats" android:text="Voltar" android:layout_width="200dp" android:layout_height="wrap_content" android:fontFamily="casual" android:textStyle="bold" android:alpha="0.85" android:textAllCaps="false" android:textColor="#FFFFFF" android:background="@drawable/bg_botao_arredondado"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout android:id="@+id/achievementsLayoutRoot" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone" android:background="#CC000000" android:padding="20dp">
+        <LinearLayout android:id="@+id/achievementsContainer" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="16dp">
+            <TextView android:id="@+id/tvAchTitle" android:text="CONQUISTAS" android:textColor="#FFD700" android:textSize="32sp" android:textStyle="bold" android:fontFamily="casual" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16dp"/>
+            <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <GridLayout
+                    android:id="@+id/achievementsGrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:columnCount="3"
+                    android:alignmentMode="alignMargins"
+                    android:useDefaultMargins="true">
+                </GridLayout>
+            </ScrollView>
+            <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnBackFromAchievements" android:text="Voltar" android:layout_width="200dp" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:fontFamily="casual" android:textStyle="bold" android:alpha="0.85" android:textAllCaps="false" android:textColor="#FFFFFF" android:background="@drawable/bg_botao_arredondado"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout android:id="@+id/optionsLayoutRoot" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone" android:background="#CC000000" android:padding="20dp">
+        <LinearLayout android:id="@+id/optionsContainer" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="20dp">
+            <TextView android:id="@+id/tvOptTitle" android:text="OPÇÕES" android:textColor="#FFD700" android:textSize="32sp" android:textStyle="bold" android:fontFamily="casual" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16dp"/>
+            <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="start">
+
+                    <TextView android:id="@+id/tvLangSel" android:text="Seleção de Idioma:" android:textColor="#FFF" android:fontFamily="casual" android:textSize="20sp" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="24dp">
+                        <ImageButton android:id="@+id/btnLangPT" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/brasil" android:scaleType="fitCenter" android:background="?selectableItemBackground" android:layout_marginEnd="10dp"/>
+                        <ImageButton android:id="@+id/btnLangEN" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/eua" android:scaleType="fitCenter" android:background="?selectableItemBackground" android:layout_marginEnd="10dp"/>
+                        <ImageButton android:id="@+id/btnLangES" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/espanha" android:scaleType="fitCenter" android:background="?selectableItemBackground" android:layout_marginEnd="10dp"/>
+                        <ImageButton android:id="@+id/btnLangJA" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/japao" android:scaleType="fitCenter" android:background="?selectableItemBackground"/>
+                    </LinearLayout>
+
+                    <TextView android:id="@+id/tvOptControl" android:text="Controle:" android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioGroup android:id="@+id/rgControls" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp">
+                        <RadioButton android:id="@+id/rbTouch" android:text="Touch" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual" android:layout_marginEnd="24dp"/>
+                        <RadioButton android:id="@+id/rbButtons" android:text="Botões" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                    </RadioGroup>
+
+                    <Switch android:id="@+id/swParedes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Paredes Mortais " android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_marginBottom="10dp"/>
+                    <Switch android:id="@+id/swHighQuality" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gráficos HQ " android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_marginBottom="10dp"/>
+                    <Switch android:id="@+id/swSound" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sons (Geral) " android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_marginBottom="10dp"/>
+                    <Switch android:id="@+id/swBlood" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Efeito Sangue " android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_marginBottom="10dp"/>
+                    <Switch android:id="@+id/swFootprints" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pegadas " android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_marginBottom="10dp"/>
+                    <Switch android:id="@+id/swDiagonal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Diagonal " android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_marginBottom="20dp"/>
+
+                    <TextView android:id="@+id/tvOptVolume" android:text="Volume:" android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <SeekBar android:id="@+id/sbMusicVolume" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="100" android:progress="60" android:layout_marginBottom="30dp"/>
+
+                    <View android:layout_width="match_parent" android:layout_height="2dp" android:background="#55FFFFFF" android:layout_marginBottom="20dp"/>
+
+                    <TextView android:id="@+id/tvOptSnake" android:text="Skin da Cobra:" android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioGroup android:id="@+id/rgSnakeSkin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="20dp">
+                        <RadioButton android:id="@+id/rbSnake0" android:text="Jararaca" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                        <RadioButton android:id="@+id/rbSnake1" android:text="Cobra Real" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                        <RadioButton android:id="@+id/rbSnake2" android:text="Naja" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                        <RadioButton android:id="@+id/rbSnake3" android:text="Jiboia" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                        <RadioButton android:id="@+id/rbSnake4" android:text="Mamba Negra" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                    </RadioGroup>
+
+                    <TextView android:id="@+id/tvOptField" android:text="Cor do Campo:" android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioGroup android:id="@+id/rgFieldSkin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="20dp">
+                        <RadioButton android:id="@+id/rbField0" android:text="Preto" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                        <RadioButton android:id="@+id/rbField1" android:text="Branco" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                        <RadioButton android:id="@+id/rbField2" android:text="Cinza" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                        <RadioButton android:id="@+id/rbField3" android:text="Laranja" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                        <RadioButton android:id="@+id/rbField4" android:text="Ciano" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                    </RadioGroup>
+
+                    <LinearLayout android:id="@+id/layoutBonus" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                        <View android:layout_width="match_parent" android:layout_height="2dp" android:background="#FFD700" android:layout_marginBottom="20dp"/>
+                        <TextView android:id="@+id/tvOptBonus" android:text="BÔNUS DESBLOQUEADO!" android:textColor="#FFD700" android:textStyle="bold" android:fontFamily="casual" android:textSize="28sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10dp"/>
+
+                        <TextView android:id="@+id/tvOptBonusSnake" android:text="Skins Bônus (Cobra):" android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <RadioGroup android:id="@+id/rgBonusSnakeSkin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="20dp">
+                            <RadioButton android:id="@+id/rbSnake5" android:text="Coral" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbSnake6" android:text="Cascavel" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbSnake7" android:text="Tigre" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbSnake8" android:text="Bungarus" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbSnake9" android:text="Taipan" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbSnake10" android:text="Xenodermus" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbSnake11" android:text="Sucuri" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbSnake12" android:text="Surucucu" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbSnake13" android:text="Titanoboa" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                        </RadioGroup>
+
+                        <TextView android:id="@+id/tvOptBonusFood" android:text="Skins Bônus (Comida):" android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <RadioGroup android:id="@+id/rgBonusFoodSkin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="20dp">
+                            <RadioButton android:id="@+id/rbFood0" android:text="Hamster (Padrão)" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual" android:checked="true"/>
+                            <RadioButton android:id="@+id/rbFood1" android:text="Porquinho da Índia" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbFood2" android:text="Gerbil" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbFood3" android:text="Twister" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbFood4" android:text="Chinchila" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbFood5" android:text="Camundongo" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                            <RadioButton android:id="@+id/rbFood6" android:text="Rato-Pigmeu" android:textColor="#FFF" android:textSize="22sp" android:fontFamily="casual"/>
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="2dp" android:background="#55FFFFFF" android:layout_marginTop="10dp" android:layout_marginBottom="20dp"/>
+                    <TextView android:id="@+id/tvSecretCode" android:text="CÓDIGO SECRETO:" android:textColor="#FFF" android:fontFamily="casual" android:textSize="26sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="20dp">
+                        <EditText android:id="@+id/etCheatCode" android:layout_width="0dp" android:layout_weight="1" android:layout_height="50dp" android:background="@drawable/bg_botao_arredondado" android:backgroundTint="#333333" android:textColor="#FFF" android:fontFamily="casual" android:paddingHorizontal="16dp" android:hint="Digite o código..." android:textColorHint="#888" android:inputType="textVisiblePassword" android:maxLines="1" android:layout_marginEnd="10dp"/>
+                        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnSubmitCheat" android:layout_width="wrap_content" android:layout_height="50dp" android:background="@drawable/bg_botao_arredondado" android:backgroundTint="#4CAF50" android:text="OK" android:textColor="#FFF" android:fontFamily="casual" android:textStyle="bold"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+            <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnBackFromOptions" android:text="Salvar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:fontFamily="casual" android:textStyle="bold" android:textAllCaps="false" android:textColor="#FFFFFF" android:background="@drawable/bg_botao_arredondado"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout android:id="@+id/recordsLayoutRoot" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone" android:background="#CC000000" android:padding="20dp">
+        <LinearLayout android:id="@+id/recordsContainer" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="20dp">
+            <TextView android:id="@+id/tvRecTitle" android:text="TOP 10" android:textColor="#FFD700" android:textSize="32sp" android:textStyle="bold" android:fontFamily="casual" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16dp"/>
+
+            <RadioGroup android:id="@+id/rgRecMode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="24dp">
+                <RadioButton android:id="@+id/rbRecNorm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Padrão" android:textColor="#FFF" android:fontFamily="casual" android:checked="true" android:buttonTint="#FFD700" android:layout_marginEnd="10dp"/>
+                <RadioButton android:id="@+id/rbRecInf" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Infinito" android:textColor="#FFF" android:fontFamily="casual" android:buttonTint="#FFD700" android:layout_marginEnd="10dp"/>
+                <RadioButton android:id="@+id/rbRecSurv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Survival" android:textColor="#FFF" android:fontFamily="casual" android:buttonTint="#FFD700"/>
+            </RadioGroup>
+
+            <TextView android:id="@+id/tvRecordsList" android:text="Sem recordes" android:textColor="#FFF" android:fontFamily="casual" android:textSize="20sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="30dp"/>
+            <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnBackFromRecords" android:text="Voltar" android:layout_width="200dp" android:layout_height="wrap_content" android:fontFamily="casual" android:textStyle="bold" android:alpha="0.85" android:textAllCaps="false" android:textColor="#FFFFFF" android:background="@drawable/bg_botao_arredondado"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout android:id="@+id/gameLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:visibility="gone">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <FrameLayout android:id="@+id/gameContainer" android:layout_width="match_parent" android:layout_height="match_parent"/>
+            <View android:id="@+id/flashView" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFFFFF" android:visibility="gone"/>
+            <ImageView android:id="@+id/ivGameOver" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/gameover" android:scaleType="centerCrop" android:visibility="gone" android:background="#DD000000"/>
+        </FrameLayout>
+        <View android:id="@+id/gameDivisor" android:layout_width="match_parent" android:layout_height="2dp" android:background="#FFFFFF"/>
+        <LinearLayout android:id="@+id/bottomControlBar" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#121212" android:padding="16dp" android:orientation="vertical">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnBackGame" android:text="Voltar" android:layout_width="120dp" android:layout_height="wrap_content" android:layout_alignParentStart="true" android:fontFamily="casual" android:alpha="0.85" android:textAllCaps="false" android:textColor="#FFFFFF" android:background="@drawable/bg_botao_arredondado"/>
+                <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnPauseGame" android:text="Pause" android:layout_width="120dp" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:fontFamily="casual" android:alpha="0.85" android:textAllCaps="false" android:textColor="#FFFFFF" android:background="@drawable/bg_botao_arredondado"/>
+            </RelativeLayout>
+            <LinearLayout android:id="@+id/dpadLayout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_gravity="center" android:layout_marginTop="20dp" android:gravity="center">
+                <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnUp" android:text="↑" android:textSize="24sp" android:layout_width="80dp" android:layout_height="70dp" android:alpha="0.85" android:textColor="#FFFFFF" android:background="@drawable/bg_botao_arredondado"/>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginVertical="8dp">
+                    <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnLeft" android:text="←" android:textSize="24sp" android:layout_width="80dp" android:layout_height="70dp" android:layout_marginEnd="60dp" android:alpha="0.85" android:textColor="#FFFFFF" android:background="@drawable/bg_botao_arredondado"/>
+                    <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnRight" android:text="→" android:textSize="24sp" android:layout_width="80dp" android:layout_height="70dp" android:alpha="0.85" android:textColor="#FFFFFF" android:background="@drawable/bg_botao_arredondado"/>
+                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnDown" android:text="↓" android:textSize="24sp" android:layout_width="80dp" android:layout_height="70dp" android:alpha="0.85" android:textColor="#FFFFFF" android:background="@drawable/bg_botao_arredondado"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout android:id="@+id/championLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone" android:background="#000000" android:clickable="true" android:focusable="true">
+        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/champion" android:scaleType="centerCrop"/>
+        <TextView android:id="@+id/tvCredits" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:gravity="center" android:textColor="#FFFFFF" android:textSize="22sp" android:fontFamily="casual" android:lineSpacingExtra="10dp" android:shadowColor="#000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5"/>
+    </FrameLayout>
+
+    <FrameLayout android:id="@+id/aboutLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone" android:background="#D9000000" android:clickable="true" android:focusable="true">
+        <ImageView android:layout_width="300dp" android:layout_height="wrap_content" android:layout_gravity="center" android:adjustViewBounds="true" android:src="@drawable/sobre"/>
+    </FrameLayout>
+
+    <FrameLayout android:id="@+id/initialLangLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone" android:elevation="50dp">
+        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/loadscreen03" android:scaleType="centerCrop"/>
+        <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="#D9000000"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:layout_gravity="center">
+            <TextView android:id="@+id/tvInitialLangTitle" android:text="Selecione o Idioma!\nSelect Language!\n¡Seleccione el Idioma!\n言語を選択してください" android:textColor="#FFFFFF" android:textSize="24sp" android:textStyle="bold" android:fontFamily="casual" android:textAlignment="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="40dp"/>
+            <ImageButton android:id="@+id/btnInitLangPT" android:layout_width="80dp" android:layout_height="80dp" android:src="@drawable/brasil" android:scaleType="fitCenter" android:background="?selectableItemBackground" android:layout_marginBottom="24dp"/>
+            <ImageButton android:id="@+id/btnInitLangEN" android:layout_width="80dp" android:layout_height="80dp" android:src="@drawable/eua" android:scaleType="fitCenter" android:background="?selectableItemBackground" android:layout_marginBottom="24dp"/>
+            <ImageButton android:id="@+id/btnInitLangES" android:layout_width="80dp" android:layout_height="80dp" android:src="@drawable/espanha" android:scaleType="fitCenter" android:background="?selectableItemBackground" android:layout_marginBottom="24dp"/>
+            <ImageButton android:id="@+id/btnInitLangJA" android:layout_width="80dp" android:layout_height="80dp" android:src="@drawable/japao" android:scaleType="fitCenter" android:background="?selectableItemBackground"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout android:id="@+id/tutorialLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone" android:clickable="true" android:focusable="true" android:elevation="40dp">
+        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/loadscreen03" android:scaleType="centerCrop"/>
+        <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="#D9000000"/>
+
+        <ImageView android:id="@+id/ivTutorial" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_marginBottom="0dp" android:scaleType="fitCenter" android:adjustViewBounds="true" />
+
+        <TextView android:id="@+id/tvTutorialTap" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Toque na tela para avançar" android:textColor="#FFFFFF" android:textSize="22sp" android:textStyle="bold" android:fontFamily="casual" android:gravity="center" android:layout_gravity="bottom" android:layout_marginBottom="30dp" android:shadowColor="#000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5"/>
+    </FrameLayout>
+
+    <FrameLayout android:id="@+id/splashLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="visible" android:background="#000000">
+        <ImageView android:id="@+id/ivSplash" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/loadscreen01" android:scaleType="centerCrop"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:orientation="vertical" android:gravity="center" android:layout_marginBottom="80dp">
+            <ImageView android:id="@+id/ivSplashAnim" android:layout_width="84dp" android:layout_height="84dp" android:visibility="gone" android:layout_marginBottom="16dp"/>
+            <FrameLayout android:id="@+id/progressContainer" android:layout_width="250dp" android:layout_height="16dp" android:visibility="gone" android:background="@drawable/bg_botao_arredondado" android:padding="2dp">
+                <View android:id="@+id/vProgressBar" android:layout_width="0dp" android:layout_height="match_parent"/>
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/achPopupAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="30dp"
+        android:translationY="-300dp"
+        android:background="@drawable/bg_botao_arredondado"
+        android:backgroundTint="#EE111111"
+        android:elevation="20dp"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/ivAchPopupIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONQUISTA DESBLOQUEADA!"
+                android:textColor="#FFD700"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:fontFamily="casual" />
+            <TextView
+                android:id="@+id/tvAchPopupTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:fontFamily="casual" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
